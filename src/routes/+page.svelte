@@ -2,7 +2,6 @@
   import "../app.scss";
 
   let num_input: String = "";
-  let first_input: String = "";
 
   function display(num: string): void {
     if (
@@ -19,13 +18,12 @@
   }
 
   function fn_btn(btn: string): void {
-    first_input = `${num_input}${btn}`;
-    num_input = "";
+    num_input = `${num_input}${btn}`;
   }
 
   function fn_summation(): void {
     try {
-      num_input = eval(String(first_input) + String(num_input));
+      num_input = eval(String(num_input));
     } catch (error) {
       if (num_input.at(0) === "(" && num_input.at(-1) === ")")
         num_input = "Please enter number";
